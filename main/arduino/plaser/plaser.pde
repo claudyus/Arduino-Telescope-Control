@@ -5,58 +5,68 @@
 #include "AxesLib.h"
 
 
-/**
- * Output pin for the STEP on X axis of the stepper controller (horizontal)
- */
-int stepperPin1 = 3;
+#define ADAFRIUT_MSHIELD 1
 
-/**
- * Output pin for the STEP on Y axis of the stepper controller (vertical)
- */
-int stepperPin2 = 4;
 
-/**
- * Output pin for the rotate direction of both axes 
- * (DIR pin of the stepper controllers)
- */
-int steppersDir = 2;
+#ifdef ADAFRUIT_MSHIELD
+	#include "adafruit-mshield/AFMotor.h"
 
-/**
- * Enable the engine power supply of the X axis
- * (ENABLE pin of the controller)
- */
-int enableStepper1 = 9;
+	
 
-/**
- * Enables the engine power supply of the Y axis
- * (ENABLE pin of the controller)
- */
-int enableStepper2 = 10;
+#else 
+	/**
+	 * Output pin for the STEP on X axis of the stepper controller (horizontal)
+	 */
+	int stepperPin1 = 3;
 
-/**
- * Input pin for the end limit sensor of the X axis (360º)
- */
-int sensor360H = 5;
+	/**
+	 * Output pin for the STEP on Y axis of the stepper controller (vertical)
+	 */
+	int stepperPin2 = 4;
 
-/**
- * Input pin for the init limit sensor of the X axis (0º)
- */
-int sensor0H = 11;
+	/**
+	 * Output pin for the rotate direction of both axes 
+	 * (DIR pin of the stepper controllers)
+	 */
+	int steppersDir = 2;
 
-/**
- * Input pin for the bottom limit sensor of the Y axis (0º)
- */
-int sensorBottomV = 6;
+	/**
+	 * Enable the engine power supply of the X axis
+	 * (ENABLE pin of the controller)
+	 */
+	int enableStepper1 = 9;
 
-/**
- * Input pin for the top limit sensor of the Y axis (90º)
- */
-int sensorTopV = 7;
+	/**
+	 * Enables the engine power supply of the Y axis
+	 * (ENABLE pin of the controller)
+	 */
+	int enableStepper2 = 10;
 
-/**
- * Output pin to control the laser pointer
- */
-int laserPin = 8;
+	/**
+	 * Input pin for the end limit sensor of the X axis (360º)
+	 */
+	int sensor360H = 5;
+
+	/**
+	 * Input pin for the init limit sensor of the X axis (0º)
+	 */
+	int sensor0H = 11;
+
+	/**
+	 * Input pin for the bottom limit sensor of the Y axis (0º)
+	 */
+	int sensorBottomV = 6;
+
+	/**
+	 * Input pin for the top limit sensor of the Y axis (90º)
+	 */
+	int sensorTopV = 7;
+
+	/**
+	 * Output pin to control the laser pointer
+	 */
+	int laserPin = 8;
+#endif
 
 /**
  * Library for coordinates transformations

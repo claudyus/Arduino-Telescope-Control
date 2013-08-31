@@ -1,0 +1,3 @@
+[submodule "main/arduino/plaser/adafruit-mshield"]
+	path = main/arduino/plaser/adafruit-mshield
+	url = git@github.com:adafruit/Adafruit-Motor-Shield-library.git
